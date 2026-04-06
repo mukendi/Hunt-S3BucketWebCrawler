@@ -45,11 +45,11 @@ No installation required. Download the script and run it directly.
 
 ```powershell
 # Option 1 - Clone the repository
-git clone https://github.com/youruser/Hunt-S3BucketWebCrawler.git
+git clone https://github.com/mukendi/Hunt-S3BucketWebCrawler.git
 cd Hunt-S3BucketWebCrawler
 
 # Option 2 - Direct download
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/youruser/Hunt-S3BucketWebCrawler/main/Hunt-S3BucketWebCrawler.ps1" `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/mukendi/Hunt-S3BucketWebCrawler/main/Hunt-S3BucketWebCrawler.ps1" `
     -OutFile "Hunt-S3BucketWebCrawler.ps1"
 ```
 
@@ -78,9 +78,7 @@ powershell.exe -ExecutionPolicy Bypass -File ".\Hunt-S3BucketWebCrawler.ps1" -Do
 |---|---|---|---|
 | `-Domain` | `string` | — | Single target domain. Accepts bare hostnames or  target**. |
 | `-MaxDepth` | `int` | `3` | Maximum link depth from the root URL. |
-| `-Threads` | `int` | `3` | Number of targets to crawl in parallel (1–10). |
-| `-CheckDNS` | `switch` | off | Verify bucket existence via DNS lookup instead of HTTP HEAD. |
-| `-IncludeExternal` | `switch` | off | Also parse JS/JSON assets hosted on path. |
+| `-CheckDNS` | `switch` | off | Verify bucket existence via DNS lookup instead path. |
 | `-TimeoutSec` | `int` | `10` | HTTP timeout per request in seconds. |
 
 ---
