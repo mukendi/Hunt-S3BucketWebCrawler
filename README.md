@@ -66,8 +66,8 @@ powershell.exe -ExecutionPolicy Bypass -File ".\Hunt-S3BucketWebCrawler.ps1" -Do
 
 ### Use DNS verification instead of HTTP (quieter, less AWS log noise)
 
-```powershell
-.\Hunt-S3BucketWebCrawler.ps1 -Domain "example.com" -CheckDNS
+```
+powershell.exe -ExecutionPolicy Bypass -File ".\Hunt-S3BucketWebCrawler.ps1" -Domain "example.com" -CheckDNS
 ```
 
 ---
@@ -76,16 +76,11 @@ powershell.exe -ExecutionPolicy Bypass -File ".\Hunt-S3BucketWebCrawler.ps1" -Do
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
-| `-Domain` | `string` | — | Single target domain. Accepts bare hostnames or full URLs. |
-| `-SubdomainFile` | `string` | — | Path to a text file with one domain/subdomain per line. Lines starting with `#` are ignored. |
-| `-Subdomains` | `string[]` | `@()` | Inline array of additional subdomains. |
-| `-MaxPages` | `int` | `100` | Maximum number of pages/assets to crawl **per target**. |
+| `-Domain` | `string` | — | Single target domain. Accepts bare hostnames or  target**. |
 | `-MaxDepth` | `int` | `3` | Maximum link depth from the root URL. |
 | `-Threads` | `int` | `3` | Number of targets to crawl in parallel (1–10). |
 | `-CheckDNS` | `switch` | off | Verify bucket existence via DNS lookup instead of HTTP HEAD. |
-| `-IncludeExternal` | `switch` | off | Also parse JS/JSON assets hosted on third-party domains (CDN, etc.). |
-| `-SkipRobots` | `switch` | off | Ignore `robots.txt` on all targets. |
-| `-OutputFile` | `string` | — | Write aggregated results to a JSON file at this path. |
+| `-IncludeExternal` | `switch` | off | Also parse JS/JSON assets hosted on path. |
 | `-TimeoutSec` | `int` | `10` | HTTP timeout per request in seconds. |
 
 ---
